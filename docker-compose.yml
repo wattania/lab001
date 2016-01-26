@@ -1,0 +1,15 @@
+haproxy:
+  image: tutum/haproxy
+  ports:
+    - "8000:80"
+    - "19360:1936"
+  links:
+    - web1
+    - web2
+web1:
+  image: tutum/hello-world
+  container_name: web-compose-1
+web2:
+  image: tutum/hello-world
+  container_name: web-compose-2
+
